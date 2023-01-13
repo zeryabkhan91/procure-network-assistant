@@ -2,7 +2,7 @@ const { default: mongoose } = require("mongoose");
 
 const mongoConnect = () => {
   mongoose.connect(
-    "mongodb+srv://repotest914:P%40ss1234.@procure-desktop-local.sxypalh.mongodb.net/devices",
+    "mongodb+srv://repotest914:P%40ss1234.@procure-desktop-local.sxypalh.mongodb.net/procure-desktop",
     { useNewUrlParser: true }
   );
   var conn = mongoose.connection;

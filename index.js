@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require("electron");
 
 const path = require("path");
 const { systemInfo, getUserId, getdata } = require("./src/helper");
-const storeData = require("./src/Store");
+// const storeData = require("./src/Store");
 const mongoConnect = require("./src/database/database");
 const { removeUser } = require("./src/storage/storage");
 const AutoLaunch = require("auto-launch");
