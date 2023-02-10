@@ -1,26 +1,38 @@
 {
-  "name": "procure-network-assistant",
+  "name": "procure-agent",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "build-win": "electron-builder build --win"
+    "build-win": "electron-builder build --win",
+    "build-linux": "electron-builder build --linux",
+    "build-mac": "electron-builder build --mac"
   },
   "build": {
-    "appId": "com.electron.app",
+    "appId": "com.procure-agent.app",
     "linux": {
       "target": [
         "AppImage",
-        "tar.gz"
+        "tar.gz",
+        "snap"
       ]
     },
     "win": {
       "target": "nsis"
     },
+    "mac": {
+      "target": "dmg"
+    },
     "nsis": {
-      "artifactName": "electron_app.exe"
+      "artifactName": "procure-agent.exe"
+    },
+    "protocols": {
+      "name": "procure-protocol",
+      "schemes": [
+        "procure-agent"
+      ]
     }
   },
   "author": "",
@@ -31,7 +43,6 @@
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
-    "electron-json-storage": "^4.6.0",
     "mongoose": "^6.8.3",
     "systeminformation": "^5.17.3"
   }

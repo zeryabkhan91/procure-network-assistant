@@ -1,11 +1,11 @@
 var mongoose = require("mongoose");
 
-var Device = new mongoose.Schema(
+var Asset = new mongoose.Schema(
   {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    email: { type: String, required: false },
-    mac: { type: String, required: false },
+    userName: { type: String, required: true },
+    email: { type: String, required: true },
+    mac: { type: String, required: true },
+    ip: { type: String, required: true },
     battery: Object,
     system: Object,
     bios: Object,
@@ -25,8 +25,4 @@ var Device = new mongoose.Schema(
   { timestamps: true }
 );
 
-Device.virtual("fullName").get(function () {
-  return this.firstName + " " + this.lastName;
-});
-
-module.exports = mongoose.model("devices", Device);
+module.exports = mongoose.model("assets", Asset);
